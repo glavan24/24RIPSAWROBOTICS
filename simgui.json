@@ -2,6 +2,8 @@
   "NTProvider": {
     "types": {
       "/FMSInfo": "FMSInfo",
+      "/LiveWindow/Drivetrain": "Subsystem",
+      "/LiveWindow/Elevator": "Subsystem",
       "/LiveWindow/Elevator/Motor": "Motor Controller",
       "/LiveWindow/Elevator/PID Controller": "PIDController",
       "/LiveWindow/Ungrouped/AnalogGyro[0]": "Gyro",

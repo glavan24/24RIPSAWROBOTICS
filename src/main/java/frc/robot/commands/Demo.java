@@ -17,7 +17,9 @@ import edu.wpi.first.math.trajectory.TrajectoryGenerator;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 
-import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Drivetrain
+
+;
 
 public class Demo extends Command {
   /** Creates a new Demo. */

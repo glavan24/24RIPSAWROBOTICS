@@ -6,17 +6,9 @@ package frc.robot.Subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class Drivetrain extends SubsystemBase {
-  /** Creates a new Drivetrain. */
-  public Drivetrain() {
-    
-  }
-
-  public void arcadeDriveCommand(double move, double turn) {
-    if (Math.abs(move) < 0.1) move = 0;
-    if (Math.abs(turn) < 0.1) turn = 0;
-    // Do something with the move and turn values
-  }
+public class Intake extends SubsystemBase {
+  /** Creates a new Intake. */
+  public Intake() {}
 
   @Override
   public void periodic() {

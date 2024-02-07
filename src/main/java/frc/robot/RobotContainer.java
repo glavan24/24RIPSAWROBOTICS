@@ -4,10 +4,16 @@
 
 package frc.robot;
 
+import frc.robot.Subsystems.Intake;
+import frc.robot.Subsystems.Shooter;
 import frc.robot.commands.AutoDoNothing;
 import frc.robot.commands.Demo;
-import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Elevator;
+import frc.robot.Subsystems.Drivetrain;
+
+import frc.robot.commands.RedCenter;
+
+import org.ejml.dense.row.decomposition.eig.EigenPowerMethod_DDRM;
+
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -32,6 +38,8 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Drivetrain m_drivetrain = new Drivetrain();
   private final Elevator m_elevator = new Elevator();
+  private final Intake m_intake = new Intake();
+  private final Shooter m_shooter = new Shooter();
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser;
@@ -56,6 +64,12 @@ public class RobotContainer {
     m_chooser = new SendableChooser<>();
     m_chooser.setDefaultOption("Autonomous Position 3", new Demo(m_drivetrain));
     m_chooser.addOption("Do nothing", new AutoDoNothing());
+    m_chooser.addOption("Red left", new RedLeft());
+    m_chooser.addOption("Red Right", new RedRight());
+    m_chooser.addOption("Red Center", new RedCenter(m_drivetrain,m_shooter,m_intake));
+    m_chooser.addOption("Blue left", new BlueLeft());
+    m_chooser.addOption("Blue right", new BlueRight ());
+    m_chooser.addOption("Blue center", new BlueCenter ());
     SmartDashboard.putData(m_chooser);
 
   }
